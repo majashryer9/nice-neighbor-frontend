@@ -26,7 +26,7 @@ export class NavComponent implements OnInit {
     },
     {
       title: 'Services',
-      href: '/services',
+      href: '/nice-neighbor-services',
       active: false
     }
   ];

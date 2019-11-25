@@ -1,23 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { RegisterNiceNeighborComponent } from './pages/register-nice-neighbor/register-nice-neighbor.component';
-import { ServicesComponent } from './pages/services/services.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'register-nice-neighbor',
-    component: RegisterNiceNeighborComponent
-  },
-  {
-    path: 'services',
-    component: ServicesComponent
-  }
+  { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'nice-neighbor-services', loadChildren: () => import('./nice-neighbor-services/nice-neighbor-services.module').then(m => m.NiceNeighborServicesModule) },
+  { path: 'register-nice-neighbor', loadChildren: () => import('./register-nice-neighbor/register-nice-neighbor.module').then(m => m.RegisterNiceNeighborModule) }
 ];
 
 @NgModule({
